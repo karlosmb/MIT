@@ -1,0 +1,57 @@
+// Colors
+$color-text-primary: #3d3d3d;
+$color-accent-primary: #e62231;
+$color-accent-secondary: #03364b;
+$color-accent-tertiary: #ff3544;
+$color-accent-quaternary: #333333;
+$color-accent-quinary: #f4f4f4;
+$color-overlay: #000;
+$overlay-opacity:.75;
+$color-border: #f5f5f5;
+
+// Typography
+$font-stack-primary: 'Open Sans', sans-serif;
+$font-stack-secondary: 'Heebo', sans-serif;
+
+$body-font-size: 18px;
+$body-font-weight: 400;
+$body-line-height: 1.5;
+
+$primary-link-color: $color-accent-primary;
+$primary-link-color-hover: $color-accent-tertiary;
+
+$primary-heading-color: #333;
+$secondary-heading-color: $color-accent-tertiary;
+
+$h1-size: 60px;
+$h1-color: $primary-heading-color;
+$h2-size: 60px;
+$h2-color: $primary-heading-color;
+$h3-size: 45px;
+$h3-color: $primary-heading-color;
+$h4-size: 24px;
+$h4-color: $primary-heading-color;
+$h5-size: 15px;
+$h5-color: $primary-heading-color;
+
+$heading-transform: none;
+
+// Placement
+$header-bg: $color-text-primary;
+
+$main-bg: #fff;
+
+$nav-color: #fff;
+$nav-color-hover: $color-accent-tertiary;
+$nav-dropdown-bg: #fff;
+$nav-dropdown-color: $primary-heading-color;
+$nav-dropdown-color-hover: $primary-link-color;
+$nav-mega-menu-title: $primary-heading-color;
+
+$teaser-sidebar-bg: transparent;
+
+$prefooter-bg: $color-accent-quinary;
+$prefooter-color: #fff;
+
+$footer-bg: #262626;
+$footer-color: #8a8a8a;

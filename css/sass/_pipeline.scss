@@ -1,0 +1,525 @@
+@mixin linear-gradient($stop1, $stop2, $dir: $gradient-direction) {
+     background: $stop1;
+     
+     /* Use $phase-bottom and $phase-top if we're not using a to-right gradient */
+     @if $gradient-direction == to top {
+         background: linear-gradient($dir, $phase-bottom, $phase-top);
+         -webkit-background: linear-gradient($dir, $phase-bottom, $phase-top);
+         -moz-background: linear-gradient($dir, $phase-bottom, $phase-top);
+         -o-background: linear-gradient($dir, $phase-bottom, $phase-top);
+     }@else {
+          background: linear-gradient($dir, $stop1, $stop2);
+         -webkit-background: linear-gradient($dir, $stop1, $stop2);
+         -moz-background: linear-gradient($dir, $stop1, $stop2);
+         -o-background: linear-gradient($dir, $stop1, $stop2);
+     }
+         
+}
+
+/* While these variables can be manually set with hex codes, values can also be fed 
+    using _variables.scss if they're included. */
+
+/* Color used for the Candidate Name table head */
+$header-color-lighter: #1f4392;
+
+$th-font-weight: 600;
+
+/* Used for the Development Stage table head */
+$header-color-darker: #182452;
+
+/* Color used for the phase name row */
+$phase-name-background: #1f4392;
+$phase-name-text : #fff;
+
+/* Color used for text and solid chart bars */
+$primary-color: #1f4392;
+
+/* Direction for the phase bar gradient */
+$gradient-direction: to top;
+
+/* Top/bottom gradient colors if direction is to top */
+$phase-bottom: #74a636;
+$phase-top: #88c23f;
+
+/* Preclinical left color */
+$phase1-left: #7AB130;
+
+/* Preclinical right color / phase 1 left color */
+$phase1-right:#8DC63F;
+
+/* Phase 1 right color / phase 2 left color */
+$phase2-left: #A8DE5D;
+
+/* Color of every stage after phase 2 */
+$phase-default: #BAEA76;
+
+/* Color of border between stages */
+$phase-border-color : #d3d3d3;
+$phase-name-border-color: transparent;
+$phase-border-width: 1px;
+
+/************
+*****PIPELINE CHART & PRODUCT CHART
+************/
+
+.pipeline-chart {
+    color: #777;
+    font-size: 14px;
+    width: 100%;
+    border-collapse: separate;
+    overflow: hidden;
+    border-radius: 0;
+    position: relative;
+    margin: 80px 0 0 0;
+}
+
+.pipeline-chart td .text {
+    background: #d12042;
+    height: 50px !important;
+    padding: 0;
+    position: relative;
+}
+
+
+/*header*/
+
+.pipeline-chart th {
+    font-weight: $th-font-weight;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    background: $header-color-lighter;
+    border: none;
+    line-height: 1em;
+}
+
+
+.pipeline-chart th.development {
+    background: $header-color-darker;
+}
+
+
+.pipeline-chart .stage-name {
+    font-weight: $th-font-weight;
+    padding: 3px 15px;
+    height: 22px;
+    color: $phase-name-text;
+    border-right: solid $phase-border-width $phase-name-border-color !important;
+    border-left: solid $phase-border-width $phase-name-border-color !important;
+    text-align: center;
+    font-size: 14px;
+    background: $phase-name-background;
+}
+
+
+.pipeline-chart th:last-child {
+    border-right: none;
+}
+
+
+/*borders*/
+
+.pipeline-chart td:last-of-type {
+    border-right: 1px solid #ecebeb;
+}
+
+
+.pipeline-chart td:first-of-type {
+    border-left: 1px solid #ecebeb;
+}
+
+
+.pipeline-chart tr:last-of-type {
+    border-bottom: 1px solid #ecebeb;
+}
+
+
+.pipeline-chart tbody tr:first-child td {
+    border-top: none;
+}
+
+.pipeline-chart tbody tr:last-child td {
+    border-bottom: 1px solid #ecebeb;
+}
+
+.pipeline-chart tbody tr.product-name ~ tr td {
+    border-top: 1px dotted #ecebeb;
+}
+
+.pipeline-chart tbody tr.product-name + tr td {
+    border-top: none;
+}
+
+.pipeline-chart tbody tr.product-name td {
+    padding: 10px 19px;
+    height: auto;
+}
+
+
+/*chart body*/
+
+.pipeline-chart td {
+    border: none;
+    background: #fafafa;
+    color: #777;
+    height: 126px;
+    border-right: $phase-border-width solid $phase-border-color;
+    border-left: $phase-border-width solid  $phase-border-color;
+    position: relative;
+    padding: 20px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2em;
+}
+
+.pipeline-chart tbody tr:nth-of-type(even) td{
+    background-color: #fff;
+}
+
+.pipeline-chart tbody tr + tr td {
+    border-top: $phase-border-width solid $phase-border-color;
+}
+    
+
+.pipeline-chart td.indication {
+    font-size: 18px;
+    color: $primary-color;
+    padding-left: 19px;
+    text-align: center;
+    line-height: 1.4em;
+    width: 40%;
+    text-transform: uppercase;
+}
+
+.pipeline-chart.product-chart td.indication {
+    color: $primary-color;
+    font-size: 20px;
+    font-weight: 900;
+    padding-left: 17px;
+    padding-right: 17px;
+    text-align: center;
+    width: auto;
+}
+
+.pipeline-chart td.indication span {
+    text-transform: none;
+    font-size: 14px;
+    color: #000;
+    display: block;
+    line-height: 1.4em;
+}
+
+.pipeline-chart tr.even-row td {
+    background: #fdfdfd;
+}
+
+/*pipeline status*/
+
+.pipeline-chart td.candidate-phase {
+    width: 12%;
+}
+
+.pipeline-chart td.candidate-phase {
+    width: 15.5%;
+}
+
+.pipeline-chart .status {
+    font-size: 14px;
+    line-height: 24px;
+    position: relative;
+    text-indent: -2000px;
+    font-weight: 300;
+}
+
+.pipeline-chart td .text {
+    background: #d12042;
+    height: 28px;
+    padding: 0;
+    position: relative;
+}
+
+.pipeline-chart .complete .text:after {
+    // content:'';
+    height: 28px;
+    width: 1px;
+    position: absolute;
+    z-index: 0;
+    right: -1px;
+}
+
+.pipeline-chart .complete .text,
+.pipeline-chart .in-progress .text {
+    color: #fff;
+    display: block;
+}
+
+.pipeline-chart .in-progress {
+    width: 50%;
+}
+
+
+/*half progress mark*/
+
+.pipeline-chart .phase-2:before,
+.pipeline-chart .product-name .half > div {
+    content: '';
+    position: absolute;
+    width: 1px;
+    top: 0;
+    bottom: 0;
+    //border-right: 1px dotted #ecebeb;
+    right: 50%;
+}
+
+.pipeline-chart .product-name .half > div {
+    right: 50.5%;
+}
+
+
+/*colors*/
+
+
+/*For progress of 1 column*/
+
+.pipeline-chart .long-one .preclinical .text,
+.pipeline-chart .long-one .discovery .text{
+    @include linear-gradient($phase1-left,
+    $phase1-right);
+}
+
+.pipeline-chart .long-one .preclinical .text:after,
+.pipeline-chart .long-one .discovery .text:after{
+    background: $primary-color;
+}
+
+
+/*For progress of 2 columns*/
+
+.pipeline-chart .long-two .preclinical .text {
+    @include linear-gradient($phase1-left,
+    $phase1-right);
+}
+
+.pipeline-chart .long-two .preclinical .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-two .phase-1 .text {
+    @include linear-gradient($phase1-left,
+    $phase1-right);
+}
+
+.pipeline-chart .long-two .phase-1 .text:after {
+    background: $phase1-right;
+}
+
+
+/*For progress of 3 columns*/
+
+.pipeline-chart .long-three .preclinical .text,
+.pipeline-chart .long-three .discovery .text{
+    @include linear-gradient($phase1-left,
+    $phase1-right);
+}
+
+.pipeline-chart .long-three .preclinical .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-three .phase-1 .text {
+    @include linear-gradient($phase1-right,
+    $phase2-left);
+}
+
+.pipeline-chart .long-three .phase-1 .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-three .phase-2 .text {
+    @include linear-gradient($phase2-left,
+    $phase-default);
+}
+
+.pipeline-chart .long-three .phase-2 .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-three .phase-3 .text {
+    @include linear-gradient($phase2-left,
+    $phase-default);
+}
+
+.pipeline-chart .long-three .phase-3 .text:after {
+    background: $primary-color;
+}
+
+
+/*For progress of 4 columns*/
+
+.pipeline-chart .long-four .preclinical .text {
+    @include linear-gradient($phase1-left,
+    $phase1-right);
+}
+
+.pipeline-chart .long-four .preclinical .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-four .phase-1 .text {
+    @include linear-gradient($phase1-right,
+    $phase2-left);
+}
+
+.pipeline-chart .long-four .phase-1 .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-four .phase-2 .text {
+    @include linear-gradient($phase2-left,
+    $phase-default);
+}
+
+.pipeline-chart .long-four .phase-2 .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-four .phase-3 .text {
+    background: $phase-default;
+}
+
+.pipeline-chart .long-four .phase-3 .text:after {
+    background: $primary-color;
+}
+
+
+/*For progress of all columns*/
+
+.pipeline-chart .long-five .preclinical .text {
+    @include linear-gradient($phase1-left,
+    $phase1-right);
+}
+
+.pipeline-chart .long-five .preclinical .text:after {
+    background: $primary-color;;
+}
+
+.pipeline-chart .long-five .phase-1 .text {
+    @include linear-gradient($phase1-right,
+    $phase2-left);
+}
+
+.pipeline-chart .long-five .phase-1 .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-five .phase-2 .text {
+    @include linear-gradient($phase2-left,
+    $phase-default);
+}
+
+.pipeline-chart .long-five .phase-2 .text:after {
+    background: $primary-color;;
+}
+
+.pipeline-chart .long-five .phase-3 .text {
+    background: $phase-default;
+}
+
+.pipeline-chart .long-five .phase-3 .text:after {
+    background: $primary-color;
+}
+
+.pipeline-chart .long-five .market .text {
+    background: $phase-default;
+}
+
+.pipeline-chart .long-five .market .text:after {
+    background: $primary-color;
+}
+
+@media (max-width: 991px) {
+ /* Pipeline chart*/
+    .pipeline-chart {
+        overflow: visible;
+    }
+    .pipeline-chart thead,
+    .pipeline-chart .heading-row,
+    .pipeline-chart.product-chart .stage-name {
+        display: none;
+    }
+    .pipeline-chart,
+    .pipeline-chart tbody,
+    .pipeline-chart tr,
+    .pipeline-chart td {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    .pipeline-chart tr {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        clear: both;
+        overflow: hidden;
+    }
+    .pipeline-chart td {
+        padding: 0;
+    }
+    .pipeline-chart {
+        .product-name {
+            border: none;
+            td {
+                &:first-child {
+                    display: none;
+                }
+            }
+        }
+    }
+    .pipeline-chart tr + tr {
+        margin-top: 10px;
+    }
+    .pipeline-chart td {
+        display: block;
+        border: none!important;
+        box-shadow: none;
+        width: 100%!important;
+        border-bottom: 1px solid #ccc!important;
+    }
+    .pipeline-chart td.drug-name {
+        padding: 10px 20px;
+    }
+    .pipeline-chart td.candidate-phase {
+        display: block;
+        width: 100%;
+    }
+    .pipeline-chart .status {
+        text-indent: 0;
+        min-width: 60%;
+    }
+    .pipeline-chart.product-chart .status {
+        min-width: 78%;
+    }
+    .pipeline-chart .not-started,
+    .pipeline-chart .in-progress .text:after,
+    .pipeline-chart tbody:before {
+        display: none;
+    }
+    .pipeline-chart td .text {
+        height: auto;
+        padding: 10px;
+    }
+    .pipeline-chart .indication {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .pipeline-chart .in-progress:before,
+    .pipeline-chart .in-progress:after,
+    .pipeline-chart .status.not-stared {
+        display: none;
+    }
+    .pipeline-chart tbody tr.product-name td + td {
+        display: none;
+    }
+    .pipeline-chart.product-chart td {
+        height: auto;
+    }   
+}

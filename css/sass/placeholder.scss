@@ -1,0 +1,110 @@
+// Variables
+@import "variables"; // global vars
+
+// Frameworks
+@import "bootstrap";
+
+// Fonts
+@import "fonts";
+
+// Mixins
+@import "mixins";
+
+body {
+    background:$color-accent-primary url(../images/hero-placeholder.jpg) 50% 50% no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    font:400 16px/1.5 $font-stack-primary;
+}
+.background {
+    height:100%;
+    left:0;
+    position:fixed;
+    top:0;
+    width:100%;
+}
+.background:before {
+    @include background-opacity($color-accent-primary, 0.8);
+    content:'';
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;    
+}
+.content-wrapper {
+    position:relative;
+    width:100%;
+}
+.content {
+    color:#fff;
+    text-align:center;
+    padding:60px 60px 120px;
+}
+.content h1 {
+    border-bottom:1px solid #fff;
+    display:inline-block;
+    line-height:1;
+    padding:0 60px 23px;
+    margin-bottom:43px;
+}
+.content img {
+    height:auto;
+    max-width:100%;    
+}
+.content .soon {
+    font-size:48px;
+    font-weight:700;
+    line-height:1;
+    margin:0 0 15px;
+    text-transform:uppercase;
+}
+.content p {
+    margin:0 0 20px;
+}
+footer {
+    background:#fff;
+    bottom:0;
+    color:#5e5e5e;
+    font-size:10px;
+    font-weight:700;
+    left:0;
+    letter-spacing:0.5px;
+    padding:15px 0;
+    position:relative;
+    text-align:center;
+    text-transform:uppercase;
+    width:100%;
+    z-index:99;
+}
+@media(min-height:520px) {
+    .content-wrapper {
+        height:100%;
+        display:table;
+        left:0;
+        position:absolute;    
+        top:0;
+        width:100%;
+    }
+    .content {
+        display:table-cell;
+        vertical-align:middle;
+    }
+    footer {
+       position:fixed;    
+    }
+}
+@media(max-width:700px) {
+    .content-wrapper,
+    .content {
+        display:block;
+    }
+    .content {
+        padding:60px 15px 40px;
+    }
+    .content h1 {
+        display:block;
+        padding-left:0;
+        padding-right:0;
+    }
+}

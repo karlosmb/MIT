@@ -1,0 +1,45 @@
+// Hex to RGBA
+@mixin background-opacity($color, $opacity: 0.3) {
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+//Transition
+@mixin transition ($transition...){
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	-webkit-transition: $transition;
+	transition: $transition;
+}
+
+//Vertical Gradient
+@mixin vgradient ($top, $bottom){
+	background: $top;
+	background: -moz-linear-gradient(top,  $top 0%, $bottom 100%);
+	background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%);
+	background: linear-gradient(to bottom,  $top 0%,$bottom 100%);
+}
+
+//Horizontal Gradient
+@mixin hgradient ($left, $right){
+	background: $left;
+	background: -moz-linear-gradient(left, $left 0%, $right 100%);
+	background: -webkit-linear-gradient(left, $left 0%,$right 100%);
+	background: linear-gradient(to right, $left 0%,$right 100%);
+}
+
+//Diagonal Gradient
+@mixin dgradient ($topleft, $bottomright){
+	background: $topleft;
+	background: -moz-linear-gradient(120deg, $topleft 0%, $bottomright 100%);
+	background: -webkit-linear-gradient(120deg, $topleft 0%,$bottomright 100%);
+	background: linear-gradient(120deg, $topleft 0%,$bottomright 100%);
+}
+
+// Transforms
+@mixin transform($transforms) {
+    -webkit-transform: $transforms;
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    transform: $transforms;
+}

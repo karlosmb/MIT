@@ -1,0 +1,214 @@
+/**
+ * This file should be included with all C2 IR Suites and Sites
+ * that do not have specifically styled IR landing pages. It should not be
+ * edited except to change variables.
+ **/
+
+ /* Variables */
+
+ $stock-value-color:  $color-accent-primary;
+
+
+ /** =================
+  ** $GENERAL
+  ** =================
+  **/
+
+    .ir-landing-page .ir-module  + .ir-module{
+  	  padding: 25px 0;
+  	  margin: 25px 0;
+  	  border-top: 1px solid #ccc;
+  }
+
+ /** =================
+  ** $NEWS / $EVENTS
+  ** =================
+  **/
+
+   /** =================
+  ** $COMPANY INFO
+  ** =================
+  **/
+  
+  .presentation-module .cta {
+    display: block;
+    margin-top: 15px;
+  }
+
+   /** =================
+  ** $FINANCIAL INFO
+  ** =================
+  **/
+
+  .ir-module.financial-results {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 40px;
+  }
+
+
+   /** =================
+  ** $STOCK DATA
+  ** =================
+  **/
+
+ .ir-landing-module.ir-quote-box {
+     
+     margin-bottom: 45px;
+     
+     .meta {
+         margin-bottom: 10px;
+         .date {
+             @media (min-width: 768px) {
+                 float: right;
+             }
+             
+             @media (max-width: 768px) {
+                 display: block;
+             }
+             color: #e8e8e8;
+         }
+     }
+     
+     .stock-section {
+         padding: 10px 0;
+     }
+      .value-title {
+          display: block;
+          padding-bottom: 5px;
+          border-bottom: 1px solid $color-border;
+      }
+      
+      .value {
+          font-size: $h4_size;
+          color: $color-accent-primary;
+          font-family: $font-stack-secondary;
+      }
+ }
+
+ /** =================
+  ** $SEC FILINGS
+  ** =================
+  **/
+
+  .document-report .related-document-btn {
+	  color: $primary-link-color;
+	  cursor: pointer;
+	  margin-top: 25px;
+  }
+  
+  .document-report {
+      
+      a.filing-type {
+          font-size: 32px;
+          font-weight: 600;
+      }
+
+.flex-row {
+  display: flex;
+  flex-flow: row wrap;
+  
+  .flex {
+      flex: 1 auto;
+      
+      &.filing-type {
+          flex: 0.3 auto;
+          margin-right: 25px;
+          border-right: 2px solid $color-border;
+      }
+      
+      &.flex-full {
+          flex: 1 100%;
+      }
+      
+      &.flex-short {
+          flex: 0.5 70px;
+      }
+      
+      &.flex-wide {
+          flex: 4 1;
+      }
+      
+      @media (max-width: 480px) {
+        flex: 1 100% !important;
+    }
+    }
+    
+    
+ 
+}
+
+
+.document-report .filing-type {
+  font-size: 48px;
+}
+}
+
+
+   /** =================
+  ** $GOVERNANCE
+  ** =================
+  **/
+
+  .legend.content-table {
+  padding-bottom: 25px;
+}
+.legend.content-table > div {
+  float: left;
+  margin-right: 20px;
+}
+
+.legend.content-table .role-circle {
+  display: inline-block;
+}
+
+.role-circle.non-member {
+  background-color: #ccc;
+}
+
+.content-table.committee-list .committee-role {
+    width: 32%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.committee-list .mobile-title {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .corporate-governance-pg {
+        .committee-list {
+            thead {
+                display: none;
+            }
+            td, tr:last-child td {
+                width: 100%;
+                display: block;
+                position: relative;
+                border-bottom: 1px solid #ccc;
+                &.col-title {
+                    border: none;
+                    text-align: center;
+                    background-color: $color-accent-quaternary;
+                    color: #fff;
+                }
+                &:last-child {
+                    border: none;
+                }
+                .committee-role {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    margin-top: 20px;
+                }
+            }
+            .mobile-title {
+                display: block;
+                margin-bottom: 10px;
+                padding-right: 100px;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,164 @@
+/*Icons*/
+@font-face {
+	font-family: 'eqicons';
+	src:url('../fonts/eqicons.eot?nyop26');
+	src:url('../fonts/eqicons.eot?#iefixnyop26') format('embedded-opentype'),
+		url('../fonts/eqicons.woff?nyop26') format('woff'),
+		url('../fonts/eqicons.ttf?nyop26') format('truetype'),
+		url('../fonts/eqicons.svg?nyop26#eqicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="eqicon-"], [class*=" eqicon-"] {
+	font-family: 'eqicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.eqicon-accordion-01-minus:before, .open .eqicon-toggle:before {
+	content: "\e600";
+}
+.eqicon-accordion-01-plus:before, .eqicon-toggle:before {
+	content: "\e601";
+}
+.eqicon-arrow-01-down:before, .change.down .eqicon-change-01:before {
+	content: "\e602";
+}
+.eqicon-arrow-01-up:before, .change.up .eqicon-change-01:before {
+	content: "\e603";
+}
+.eqicon-arrow-02-down:before, .change.down .eqicon-change-02:before {
+	content: "\e604";
+}
+.eqicon-arrow-02-up:before, .change.up .eqicon-change-02:before {
+	content: "\e605";
+}
+.eqicon-arrow-03-down:before, .change.down .eqicon-change-03:before {
+	content: "\e606";
+}
+.eqicon-arrow-03-up:before, .change.up .eqicon-change-03:before {
+	content: "\e607";
+}
+.eqicon-arrow-04-down:before, .change.down .eqicon-change-04:before {
+	content: "\e608";
+}
+.eqicon-arrow-04-up:before, .change.up .eqicon-change-04:before {
+	content: "\e609";
+}
+.eqicon-arrow-05-down:before, .change.down .eqicon-change-05:before {
+	content: "\e60a";
+}
+.eqicon-arrow-05-up:before, .change.up .eqicon-change-05:before {
+	content: "\e60b";
+}
+.eqicon-arrow-06-down:before, .change.down .eqicon-change-06:before {
+	content: "\e60c";
+}
+.eqicon-arrow-06-up:before, .change.up .eqicon-change-06:before {
+	content: "\e60d";
+}
+.eqicon-arrow-07-down:before, .change.down .eqicon-change-07:before {
+	content: "\e60e";
+}
+.eqicon-arrow-07-up:before, .change.up .eqicon-change-07:before {
+	content: "\e60f";
+}
+.eqicon-arrow-08-down:before, .change.down .eqicon-change-08:before {
+	content: "\e610";
+}
+.eqicon-arrow-08-up:before, .change.up .eqicon-change-08:before {
+	content: "\e611";
+}
+.eqicon-arrow-09-down:before, .change.down .eqicon-change-09:before {
+	content: "\e612";
+}
+.eqicon-arrow-09-up:before, .change.up .eqicon-change-09:before {
+	content: "\e613";
+}
+.eqicon-arrow-10-down:before, .change.down .eqicon-change-10:before {
+	content: "\e614";
+}
+.eqicon-arrow-10-up:before, .change.up .eqicon-change-10:before {
+	content: "\e615";
+}
+.eqicon-docs-01-doc:before {
+	content: "\e616";
+}
+.eqicon-docs-01-html:before {
+	content: "\e617";
+}
+.eqicon-docs-01-pdf:before {
+	content: "\e618";
+}
+.eqicon-docs-01-xbrl:before {
+	content: "\e619";
+}
+.eqicon-docs-01-xls:before {
+	content: "\e61a";
+}
+.eqicon-docs-02-doc:before {
+	content: "\e61b";
+}
+.eqicon-docs-02-html:before {
+	content: "\e61c";
+}
+.eqicon-docs-02-pdf:before {
+	content: "\e61d";
+}
+.eqicon-docs-02-xbrl:before {
+	content: "\e61e";
+}
+.eqicon-docs-02-xls:before {
+	content: "\e61f";
+}
+.eqicon-MP3:before {
+	content: "\e620";
+}
+.eqicon-PDF:before {
+	content: "\e621";
+}
+.eqicon-ZIP:before {
+	content: "\e622";
+}
+.eqicon-HTML:before {
+	content: "\e623";
+}
+.eqicon-social-01-amazon:before {
+	content: "\e624";
+}
+.eqicon-social-01-email:before {
+	content: "\e625";
+}
+.eqicon-social-01-facebook:before {
+	content: "\e626";
+}
+.eqicon-social-01-google-plus:before {
+	content: "\e627";
+}
+.eqicon-social-01-instgram:before {
+	content: "\e628";
+}
+.eqicon-social-01-linkedin:before {
+	content: "\e629";
+}
+.eqicon-social-01-rss:before {
+	content: "\e62a";
+}
+.eqicon-social-01-twitter:before {
+	content: "\e62b";
+}
+.eqicon-social-01-windows:before {
+	content: "\e62c";
+}
+.eqicon-social-01-youtube:before {
+	content: "\e62d";
+}
